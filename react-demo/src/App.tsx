@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Skeleton from '@material-ui/lab/Skeleton'
 import { Grid } from '@material-ui/core';
 import { NavBar } from './components/NavBar/NavBar'
+import { PokemonDisplay } from './components/pokemon-display/PokemonDisplay';
+import { AllPokemon } from './components/all-pokemon/AllPokemon';
 
 function App() {
   return (
@@ -16,7 +18,10 @@ function App() {
         {/* This is to only render a single route at a time inside the switch */}
         <Switch>
           {/* Our one and only route currently on the base path */}
-          <Route path='/'>
+          <Route path='/pokemon-test'>
+            <AllPokemon/>
+          </Route>
+          <Route exact path='/'>
             {/* A material UI component to easily manage CSS Flex */}
             <Grid
               container
@@ -44,6 +49,7 @@ function App() {
             </Grid>
 
           </Route>
+          
         </Switch>
 
       </Router>
